@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Volunteer Gathering 聖誕節志工集會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HoTCmDlcGb9DP6IkLPLby/fAWJaIyOJt0mo8D9w8QE/skZ2MFogFIrVVe7Wrj+sEVhFlIC02yGYnxiT1zHibGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .hero {
+            background: url('animatedbackground1.gif') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .btn-rsvp {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .btn-rsvp {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-rsvp:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .content h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .content h2 {
+                font-size: 1.2em;
+            }
+
+            .btn-rsvp {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+
+            .photo-grid img {
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
+        <p>We're excited to have you here.</p>
+        <a href="rsvp.html" class="btn-rsvp" id="rsvp-button" data-aos="fade-in">RSVP</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GA39CqysK2R7X62oeQubNC7s09Er8VyFk3VS0RxoupHibBLxFL/kwY4ScdmKzNaMgiUEQXf+Ag9lrh0YB28ssw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('guest_name');
+            if (guestName) {
+                document.getElementById("greeting_header").innerText = `Hello ${guestName}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
+            }
+        });
+    </script>
+</body>
+</html>
